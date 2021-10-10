@@ -174,12 +174,12 @@ int main(){
 	init_regs(); // DO NOT REMOVE THIS LINE
 
 	char input[1000]; // User input can only be 100 chars long.
-	printf("Enter 'ctrl+D to EOF' to quit.\n");
+	printf("Enter d to quit.\n");
   //while loop so it can do the functions over and oveer until user press x, therefore it breaks
 	while(1){
 	  printf("Input: ");
 	  fgets(input, sizeof(input), stdin);
-	  if (*input == 'x'){break;}
+	  if (*input == 'd'){break;}
 	  interpret(input);
 	  printf("\n");
 	}
