@@ -43,15 +43,15 @@ int findRegNum(char* str){
 }
 //this will be able to handle the strings as a int so we can use them  in our swithc stateement 
 int caseH(char* str){
-  if (same(str, "LW")) {return 0;}
-  else if (same(str, "SW")) {return 1;}
-  else if (Same(str, "ADD")) {return 2;}
-  else if (same(str, "ADDI")) {return 3;}
+  if (sameC(str, "LW")) {return 0;}
+  else if (sameC(str, "SW")) {return 1;}
+  else if (sameC(str, "ADD")) {return 2;}
+  else if (sameC(str, "ADDI")) {return 3;}
   else
     return -1;
 }
 //this meethod helps my case handler help by letting me compare th given string
-bool same(char* str1, char* str2){
+bool sameC(char* str1, char* str2){
   char* tmp1 = str1;
   char* tmp2 = str2;
   int count = 0;
@@ -128,7 +128,7 @@ bool interpret(char* instr){
     int memRegSWint = findRegNum(memRegSW);
     
     int32_t datawriteSW = reg[saveSWint];
-    int32_t addressSW = atoi(*memTokSW) + memoryRegSWint; 
+    int32_t addressSW = atoi(*memTokSW) + memRegSWint; 
     int32_t write = write_address(datawriteSW, addressSW, text);
     
     break;
