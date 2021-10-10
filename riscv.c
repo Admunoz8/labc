@@ -10,7 +10,7 @@ int32_t* reg; // Array of 32 32-bit registers
 void init_regs();
 bool interpret(char* instr);
 void write_read_demo();
-bool areSame(char* str1, char* str2);
+bool same(char* str1, char* str2);
 int caseHandler(char* str);
 int findRegNum(char* str);
 void print_regs();
@@ -43,15 +43,15 @@ int findRegNum(char* str){
 }
 //this will be able to handle the strings as a int so we can use them  in our swithc stateement 
 int caseH(char* str){
-  if (sameC(str, "LW")) {return 0;}
-  else if (sameC(str, "SW")) {return 1;}
-  else if (sameC(str, "ADD")) {return 2;}
-  else if (sameC(str, "ADDI")) {return 3;}
+  if (same(str, "LW")) {return 0;}
+  else if (same(str, "SW")) {return 1;}
+  else if (same(str, "ADD")) {return 2;}
+  else if (same(str, "ADDI")) {return 3;}
   else
     return -1;
 }
 //this meethod helps my case handler help by letting me compare th given string
-bool sameC(char* str1, char* str2){
+bool same(char* str1, char* str2){
   char* tmp1 = str1;
   char* tmp2 = str2;
   int count = 0;
